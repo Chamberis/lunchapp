@@ -71,7 +71,8 @@ Required software
 
 * Download repo content.
 * Import to VSC.
-* Run tests via Testing dashboard option.
+* Run tests via Testing dashboard option. 
+* Run with terminal command: npx playwright test.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
