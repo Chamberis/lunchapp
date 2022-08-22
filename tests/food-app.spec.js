@@ -10,6 +10,8 @@ test('Should be able login with valid credentials', async ({ page }) => {
   await page.locator('[aria-label="Email"]').fill('Karolis.Jakstas@sourceryacademy.com');
   await page.locator('[aria-label="Password"]').fill('nera_svarbus9');
   await page.locator('button:has-text("Login")').click();
+
+  await expect(page.locator('.v-subheader')).toHaveText('Karolis Jakstas');
 });
 
 
@@ -18,6 +20,8 @@ test('Should not be able login with invalid credentials', async ({ page }) => {
   await page.locator('[aria-label="Email"]').fill('test@sourceryacademy.com');
   await page.locator('[aria-label="Password"]').fill('test');
   await page.locator('button:has-text("Login")').click();
+
+  await expect(page.locator('.v-error__alert')).toContainText('error message');
 });
 
 
